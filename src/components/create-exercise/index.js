@@ -110,7 +110,7 @@ export default class CreateExercise extends Component {
           </div>
 
           <div className="form-group">
-            <input type="submit" value="Create" className="btn btn-primary" />
+            <input className="btn btn-primary" type="submit" value="Create" />
           </div>
         </form>
       </div>
