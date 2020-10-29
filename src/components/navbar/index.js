@@ -2,27 +2,45 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
+  state = {
+    collapse: true,
+  };
+
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         <Link to="/" className="navbar-brand">
           ExerciseTracker
         </Link>
-        <div className="collapse navbar-collapse">
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={() =>
+            this.setState(prevState => ({
+              collapse: !prevState.collapse,
+            }))
+          }
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          className={`${this.state.collapse ? 'collapse' : ''} navbar-collapse`}
+        >
           <ul className="navbar-nav mr-auto">
             <li className="navbar-item">
               <Link to="/" className="nav-link">
-                Exercise
+                All
               </Link>
             </li>
             <li className="navbar-item">
               <Link to="/create" className="nav-link">
-                Create Exercise Log
+                New Exercise
               </Link>
             </li>
             <li className="navbar-item">
               <Link to="/user" className="nav-link">
-                Create User
+                New User
               </Link>
             </li>
           </ul>
