@@ -79,7 +79,6 @@ export default class CreateExercise extends Component {
           <div className="form-group">
             <label>Username: </label>
             <select
-              ref="userInput"
               className="form-control"
               required
               value={username}
